@@ -157,6 +157,27 @@ Compares 2–4 gadgets side-by-side:
    http://localhost:5173
    ```
 
+### Step 3: Mobile App Setup
+
+The `mobile/` directory contains an Expo React Native app that uses the same FastAPI backend and authentication/cart/order data as the web app.
+
+1. Install Node.js dependencies:
+   ```bash
+   cd mobile
+   npm install
+   ```
+2. Copy `mobile/.env.example` to `mobile/.env` and set `EXPO_PUBLIC_API_URL`.
+   - Android emulator: `http://10.0.2.2:8000/api`
+   - iOS simulator: `http://127.0.0.1:8000/api`
+   - Physical device: use the computer's LAN IP, for example `http://192.168.1.10:8000/api`
+3. Start Expo:
+   ```bash
+   npm start
+   ```
+   Scan the QR code with Expo Go, or run `npm run android` / `npm run ios`.
+
+The mobile app supports catalog browsing, product details, login and registration, synchronized cart operations, simulated checkout, order history, and the same assistant command endpoint used by the web app.
+
 ---
 
 ## 🔑 Demo Evaluation Credentials
@@ -256,4 +277,3 @@ ALL 14 UNIT & INTEGRATION TESTS PASSED WITH ZERO ERRORS!
 1. **Zero External Dependence**: The system does not depend on paid cloud services. Both voice input (`SpeechRecognition`) and voice synthesis (`SpeechSynthesis`) run entirely within modern standards-compliant web browsers (Google Chrome, Microsoft Edge).
 2. **Explainable AI**: The recommendation and comparison systems are transparent, deterministic, and explainable to evaluators.
 3. **Simulated Commerce Safety**: All checkouts and payments are strictly simulated with mock UPI, cards, and COD flows.
-

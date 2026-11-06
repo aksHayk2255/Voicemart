@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "VoiceMart",
+    "slug": "voicemart",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "voicemart",
+    "splash": {
+      "backgroundColor": "#eef2ff"
+    },
+    "android": {
+      "package": "com.voicemart.app"
+    },
+    "ios": {
+      "bundleIdentifier": "com.voicemart.app"
+    }
+  }
+}
