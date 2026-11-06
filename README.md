@@ -176,6 +176,23 @@ The `mobile/` directory contains an Expo React Native app that uses the same Fas
    ```
    Scan the QR code with Expo Go, or run `npm run android` / `npm run ios`.
 
+#### Android device authorization troubleshooting
+
+If Expo reports that the computer is not authorized for the connected Android device:
+
+1. Install **Android SDK Platform Tools** so that `adb` is available in your terminal.
+2. Enable **Developer options** and **USB debugging** on the phone.
+3. Reconnect the phone and run:
+   ```powershell
+   adb kill-server
+   adb start-server
+   adb devices
+   ```
+4. Accept the **Allow USB debugging** prompt on the phone, then run `adb devices` again and confirm the device is listed as `device`.
+5. If no prompt appears, use **Developer options → Revoke USB debugging authorizations**, reconnect the cable, and repeat the commands.
+
+USB debugging is optional. You can run `npm start` and scan the Expo QR code with Expo Go instead. The phone and computer must be on the same Wi-Fi network, and `EXPO_PUBLIC_API_URL` must use the computer's LAN IP.
+
 The mobile app supports catalog browsing, product details, login and registration, synchronized cart operations, simulated checkout, order history, and the same assistant command endpoint used by the web app.
 
 ---
